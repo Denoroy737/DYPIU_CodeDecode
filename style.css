@@ -1290,7 +1290,7 @@ section {
 }
 
 /* --------------------------------------------------------------------------
-   15. RESPONSIVE MEDIA QUERIES
+   15. RESPONSIVE MEDIA QUERIES & MOBILE OPTIMIZATIONS
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
     .hero-grid, .join-grid, .countdown-panel {
@@ -1307,26 +1307,62 @@ section {
 }
 
 @media (max-width: 768px) {
-    .hero-title { font-size: 3rem; }
-    .section-title { font-size: 2.5rem; }
+    section {
+        padding: 3.5rem 0;
+    }
+
+    .hero-section {
+        padding-top: 7rem;
+        padding-bottom: 4rem;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
 
     .nav-links {
         position: fixed;
-        top: 70px;
+        top: 65px;
         left: -100%;
         width: 100%;
-        height: calc(100vh - 70px);
+        height: calc(100vh - 65px);
         background: var(--white);
         flex-direction: column;
         justify-content: center;
-        gap: 2rem;
-        transition: 0.3s ease;
+        gap: 1.8rem;
+        transition: 0.3s ease-in-out;
         border-top: var(--border-ink);
+        box-shadow: var(--shadow-hard-lg);
+        z-index: 999;
     }
 
-    .nav-links.open { left: 0; }
+    .nav-links.open {
+        left: 0;
+    }
 
-    .nav-btn-mobile { display: block; }
+    .nav-link {
+        font-size: 1.6rem;
+    }
+
+    .nav-btn-mobile {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        padding: 0.8rem 2rem;
+        background: var(--green-electric);
+        color: var(--black-ink);
+        border: var(--border-ink);
+        border-radius: var(--radius-comic);
+        box-shadow: 4px 4px 0 var(--black-ink);
+        text-decoration: none;
+    }
+
     .nav-cta { display: none; }
     .mobile-toggle { display: flex; align-items: center; justify-content: center; }
 
@@ -1334,5 +1370,149 @@ section {
         grid-template-columns: 1fr;
     }
 
-    .timer-grid { flex-wrap: wrap; justify-content: center; }
+    .countdown-panel {
+        padding: 1.8rem;
+    }
+
+    .timer-grid {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .arena-panel {
+        padding: 1.8rem 1.2rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .footer-brand p {
+        margin: 0 auto;
+    }
 }
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .brand-logo {
+        font-size: 1.4rem;
+    }
+
+    .logo-icon {
+        width: 34px;
+        height: 34px;
+        font-size: 0.9rem;
+    }
+
+    .hero-title {
+        font-size: 2.3rem;
+        line-height: 1.1;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .hero-cta-group {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .hero-cta-group .btn-comic {
+        width: 100%;
+    }
+
+    .hero-stickers {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sticker {
+        font-size: 0.9rem;
+        padding: 0.3rem 0.8rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .stat-card {
+        padding: 1rem;
+    }
+
+    .stat-value {
+        font-size: 2.8rem;
+    }
+
+    .section-title {
+        font-size: 2.1rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+    }
+
+    .terminal-body {
+        padding: 1rem;
+        font-size: 0.82rem;
+    }
+
+    .terminal-body pre {
+        overflow-x: auto;
+    }
+
+    .timer-box {
+        min-width: 65px;
+        padding: 0.5rem 0.6rem;
+    }
+
+    .timer-value {
+        font-size: 1.6rem;
+    }
+
+    .project-links {
+        flex-direction: column;
+    }
+
+    .project-links .btn-comic {
+        width: 100%;
+    }
+
+    .join-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .form-header h3 {
+        font-size: 1.7rem;
+    }
+
+    .comic-input {
+        font-size: 1rem;
+        padding: 0.7rem 0.8rem;
+    }
+
+    .modal-card {
+        padding: 2rem 1.2rem;
+    }
+
+    .modal-card h3 {
+        font-size: 1.8rem;
+    }
+
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 48px;
+        height: 48px;
+        font-size: 1.2rem;
+    }
+}
+
